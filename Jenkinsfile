@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // This command validates the Packer HCL (HashiCorp Configuration Language) template using the provided variable files.  Ensure these file names are correct for your setup.
-                    sh "packer validate /root/packertest/al2023.pkr.hcl"
+                    sh "sudo packer validate /root/packertest/al2023.pkr.hcl"
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
                     // This command builds a VMWare image using Packer with the provided variable files
                     // It will forcefully build the image even if it exists and will prompt for action on any errors
                     // Ensure these file names are correct for your setup
-                    sh "packer build /root/packertest/al2023.pkr.hcl"
+                    sh "sudo packer build /root/packertest/al2023.pkr.hcl"
                 }
             }
         }
